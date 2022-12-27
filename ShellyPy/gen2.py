@@ -137,3 +137,11 @@ class ShellyGen2(ShellyBase):
         
     def emeter(self, index, *args, **kwargs):
         raise NotImplementedError("Unavailable")
+
+    def switchstatus(self, index):
+        values = {
+            "id": index
+        }
+
+        return self.post("Switch.GetStatus", values)
+
